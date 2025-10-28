@@ -8,6 +8,7 @@ yarn-error.log*
 
 # 環境変数ファイル
 .env.*
+.env
 
 # Docker関連
 **/.dockerignore
