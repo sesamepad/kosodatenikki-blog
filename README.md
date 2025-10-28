@@ -1,0 +1,2 @@
+# kosodatenikki-blog
+kosodatenikki.jpのブログのソースコードを管理するリポジトリです
