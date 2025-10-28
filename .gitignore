@@ -7,12 +7,9 @@ yarn-debug.log*
 yarn-error.log*
 
 # 環境変数ファイル
-.env
 .env.*
-!.env.example
 
 # Docker関連
-**/Dockerfile.prod
 **/.dockerignore
 docker-compose.override.yml
 
@@ -27,3 +24,13 @@ Thumbs.db
 frontend/dist/
 backend/dist/
 scheduler/dist/
+
+# 開発用
+coverage/
+.eslintcache
+
+# コンテンツ関連
+backend/posts/*
+!backend/posts/.gitkeep
+backend/data/*
+!backend/data/.gitkeep
