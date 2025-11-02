@@ -11,7 +11,6 @@ yarn-error.log*
 .env
 
 # Docker関連
-**/.dockerignore
 docker-compose.override.yml
 
 # OS / Editor関連
