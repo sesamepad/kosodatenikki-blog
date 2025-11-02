@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  frontend:
+    image: sesame830/blog-frontend:latest
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+    env_file:
+      - ./frontend/.env.production
+
+  backend:
+    image: sesame830/blog-backend:latest
+    ports:
+      - "3001:3001"
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env.production
+    command: ["node", "dist/index.js"]
+    volumes:
+      - ./backend/data:/app/data
+      - ./backend/posts:/app/posts
+
+  scheduler:
+    image: sesame830/blog-backend:latest
+    restart: unless-stopped
+    env_file:
+      - ./backend/.env.production
+    command: ["node", "dist/scheduler.js"]
+    volumes:
+      - ./backend/data:/app/data
+      - ./backend/posts:/app/posts
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    command: tunnel --config /etc/cloudflared/config.yml run
+    environment:
+      - TUNNEL_ORIGIN_CERT=/etc/cloudflared/cert.pem
+    volumes:
+      - /home/sesame/.cloudflared/cert.pem:/etc/cloudflared/cert.pem:ro
+      - /home/sesame/.cloudflared/b1db366e-7734-4236-a67c-aa4a57e089d3.json:/etc/cloudflared/b1db366e-7734-4236-a67c-aa4a57e089d3.json:ro
+      - /home/sesame/.cloudflared/config.yml:/etc/cloudflared/config.yml:ro
+    restart: unless-stopped
