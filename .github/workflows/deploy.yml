@@ -27,27 +27,27 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ./backend
-          # file: Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/blog-backend:latest
+          platforms: linux/amd64,linux/arm64
 
       # 4. scheduler イメージをビルド & push
       - name: Build and push scheduler
         uses: docker/build-push-action@v5
         with:
           context: ./backend
-          # file: Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/blog-scheduler:latest
+          platforms: linux/amd64,linux/arm64
 
       # 5. frontend イメージをビルド & push
       - name: Build and push frontend
         uses: docker/build-push-action@v5
         with:
           context: ./frontend
-          # file: Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/blog-frontend:latest
+          platforms: linux/amd64,linux/arm64
 
   deploy:
     name: Deploy to Production
