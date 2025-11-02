@@ -1,0 +1,30 @@
+# Node modules
+node_modules
+**/node_modules
+
+# build成果物
+dist
+
+# Log/cache
+*.log
+*.cahe
+
+# 環境ファイル（本番ビルド時は別管理）
+.env
+.env.*
+!.env.example
+
+# Git
+.git
+.gitignore
+**/.gitkeep
+
+# Docker / Compose
+Dockerfile*
+docker-compose*.yml
+
+# OS / Editor関連
+.DS_Store
+Thumbs.db
+.vscode
+**/.editorconfig

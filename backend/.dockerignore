@@ -1,0 +1,35 @@
+# Node modules
+node_modules
+**/node_modules
+
+# build成果物
+dist
+build
+.out
+.next
+coverage
+
+# Log
+*.log
+
+# OS関連
+.DS_Store
+Thumbs.db
+
+# Git 関連
+.git
+.gitignore
+**/.gitkeep
+
+# 環境ファイル（本番ビルド時は別管理）
+.env
+.env.*
+!.env.example
+
+# Docker / Compose
+Dockerfile*
+docker-compose*.yml
+
+# posts / data の実ファイルは除外
+backend/posts/*
+backend/data/*
