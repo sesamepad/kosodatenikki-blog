@@ -1,0 +1,324 @@
+.editpost-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+.editpost-container h1 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+/* フォーム全体 */
+.editpost-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* 入力グループ共通 */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group.half-width {
+  width: 50%;
+}
+
+label {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* テキスト入力とセレクト */
+input[type="text"],
+select,
+textarea {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+select[multiple] {
+  height: 100px;
+}
+
+/* マークダウン＆プレビューの横並び */
+.markdown-area {
+  display: flex;
+  gap: 2rem;
+}
+
+/* マークダウン入力側 */
+.markdown-input {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.markdown-input textarea {
+  flex-grow: 1;
+  min-height: 400px;
+  font-family: monospace;
+  resize: vertical;
+  border-radius: 6px;
+}
+
+/* プレビュー側 */
+.preview-content {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.markdown-preview {
+  flex: 1;
+  border-left: 1px solid #ddd;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.markdown-preview h2 {
+  margin: 0 0 1rem 0;
+}
+
+.preview-content p {
+  padding: 0;
+}
+
+.preview-content {
+  flex-grow: 1;
+  min-height: 400px;
+  overflow-y: auto;
+}
+
+/* タグ選択（Select2風） */
+.select2-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.select2-container .select2-selection--multiple {
+  min-height: 38px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: text;
+}
+
+.select2-container .select2-selection--multiple .select2-selection__choice {
+  background-color: #e4e4e4;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.select2-container
+  .select2-selection--multiple
+  .select2-selection__choice__remove {
+  color: #777;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.select2-container
+  .select2-selection--multiple
+  .select2-selection__choice__remove:hover {
+  color: #000;
+}
+
+/* 選択中のテキスト入力領域 */
+.select2-container .select2-search--inline .select2-search__field {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  min-width: 60px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .markdown-area {
+    flex-direction: column;
+  }
+  .markdown-preview {
+    border-left: none;
+    padding-left: 0;
+    margin-top: 2rem;
+  }
+}
+
+/* ボタン群（中央寄せ & 広めの間隔） */
+.post-button-group {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
+  margin-top: 48px;
+  flex-wrap: wrap;
+}
+
+/* 共通ボタンスタイル（さらに大きく、モダンな装い） */
+.post-button-group button {
+  padding: 23px 60px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  letter-spacing: 0.5px;
+}
+
+.button-group-post {
+  background-color: #c8e6c9;
+  color: #2e7d32;
+}
+
+.button-group-save {
+  background-color: #bbdefb;
+  color: #1565c0;
+}
+
+.button-group-delete {
+  background-color: #ffcdd2;
+  color: #c62828;
+}
+
+.post-button-group button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  opacity: 1;
+}
+
+.post-button-group button:active {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  .editpost-container {
+    background-color: #121212;
+    color: #eee;
+  }
+
+  .editpost-container h1 {
+    color: #ddd;
+  }
+
+  .editpost-form {
+    color: #eee;
+  }
+
+  .form-group label {
+    color: #ccc;
+  }
+
+  input[type="text"],
+  select,
+  textarea {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    color: #eee;
+  }
+
+  select[multiple] {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    color: #eee;
+  }
+
+  .markdown-input textarea {
+    background-color: #121212;
+    border: 1px solid #444;
+    color: #eee;
+  }
+
+  .preview-content {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    color: #eee;
+  }
+
+  .markdown-preview {
+    border-left: 1px solid #444;
+    color: #eee;
+  }
+
+  .markdown-preview h2 {
+    color: #ddd;
+  }
+
+  .select2-container .select2-selection--multiple {
+    background-color: #1e1e1e;
+    border: 1px solid #444;
+    color: #eee;
+  }
+
+  .select2-container .select2-selection--multiple .select2-selection__choice {
+    background-color: #333;
+    border: 1px solid #555;
+    color: #eee;
+  }
+
+  .select2-container
+    .select2-selection--multiple
+    .select2-selection__choice__remove {
+    color: #bbb;
+  }
+
+  .select2-container
+    .select2-selection--multiple
+    .select2-selection__choice__remove:hover {
+    color: #eee;
+  }
+
+  .post-button-group button {
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+  }
+
+  .button-group-post {
+    background-color: #388e3c;
+    color: #c8e6c9;
+  }
+
+  .button-group-save {
+    background-color: #1976d2;
+    color: #bbdefb;
+  }
+
+  .button-group-delete {
+    background-color: #c62828;
+    color: #ffcdd2;
+  }
+
+  .post-button-group button:hover {
+    box-shadow: 0 12px 24px rgba(255, 255, 255, 0.15);
+  }
+
+  .post-button-group button:active {
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.12);
+  }
+}

@@ -1,0 +1,249 @@
+/* ヘッダー全体 */
+.mobile-header {
+  position: relative;
+  width: 100%;
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1100;
+}
+
+/* バナー画像 */
+.mobile-header-banner {
+  width: 100%;
+  object-fit: contain;
+}
+
+/* ハンバーガーボタン */
+.hamburger-button {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1110;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.hamburger-button:hover .hamburger-line {
+  background-color: #555;
+}
+
+/* サイドバー */
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: 3px 0 12px rgba(0, 0, 0, 0.15);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  padding: 20px 20px 40px 20px;
+  z-index: 1120;
+  overflow-y: auto;
+  will-change: transform;
+  clip-path: inset(0 100% 0 0);
+}
+
+.mobile-sidebar.open {
+  transform: translateX(0);
+  clip-path: none;
+}
+
+/* オーバーレイ */
+.mobile-sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1115;
+}
+
+/* 閉じるボタン */
+.close-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 30px;
+  height: 30px;
+  background: rgba(0, 0, 0, 0.05);
+  border: none;
+  border-radius: 50%;
+  font-size: 22px;
+  line-height: 1;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.close-button:hover {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+/* メニューリスト */
+.menu-list {
+  list-style: none;
+  margin: 50px 0 0 0;
+  padding: 0;
+}
+
+.menu-list > li {
+  margin-bottom: 18px;
+}
+
+/* リンク */
+.menu-list a,
+.menu-list button.accordion-btn {
+  color: #222;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 6px 0;
+  width: 100%;
+  text-align: left;
+  transition: color 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-list a:hover,
+.menu-list button.accordion-btn:hover {
+  color: #005ea3;
+}
+
+/* アコーディオン用サブメニュー */
+.submenu {
+  list-style: none;
+  margin-top: 8px;
+  padding-left: 16px;
+  max-height: 500px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.submenu li {
+  margin-bottom: 10px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submenu li:hover {
+  background-color: #d0e4ff;
+}
+
+.submenu li:hover a {
+  color: #005ea3;
+}
+
+/* サブメニュー内リンクのスタイル調整 */
+.submenu li a {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #444;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  width: 100%;
+}
+
+/* カウント表示 */
+.submenu li a .item-count {
+  background-color: #007acc;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 12px;
+  padding: 2px 8px;
+  min-width: 24px;
+  text-align: center;
+  user-select: none;
+}
+
+/* スクロールバー */
+.mobile-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.mobile-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+.mobile-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ダークモード */
+@media (prefers-color-scheme: dark) {
+  .mobile-sidebar {
+    background-color: #121212;
+    box-shadow: 3px 0 12px rgba(0, 0, 0, 0.7);
+  }
+
+  .close-button {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ddd;
+  }
+
+  .close-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+
+  .menu-list a,
+  .menu-list button.accordion-btn {
+    color: #eee;
+  }
+
+  .menu-list a:hover,
+  .menu-list button.accordion-btn:hover {
+    color: #66aaff;
+  }
+
+  .submenu li {
+    background-color: transparent;
+  }
+
+  .submenu li:hover {
+    background-color: #2a3a4a;
+  }
+
+  .submenu li a {
+    color: #ccc;
+  }
+
+  .submenu li:hover a {
+    color: #66aaff;
+  }
+
+  .submenu li a .item-count {
+    background-color: #3399ff;
+    color: #fff;
+  }
+}

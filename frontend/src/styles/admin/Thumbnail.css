@@ -1,0 +1,87 @@
+.thumbnail {
+  position: relative;
+  width: 200px;
+  margin: 8px;
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.thumbnail:hover {
+  transform: scale(1.02);
+}
+
+.thumbnail-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.thumbnail-delete-button {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumbnail:hover .thumbnail-delete-button {
+  opacity: 1;
+}
+
+.thumbnail-not-exists {
+  width: 200px;
+  height: 120px;
+  border: 2px dashed #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #999;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  font-size: 32px;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.thumbnail-upload-button:hover {
+  background-color: #e0e0e0;
+}
+
+.thumbnail-upload-button input[type="file"] {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .thumbnail {
+    color: #ddd;
+  }
+
+  .thumbnail-delete-button {
+    background: rgba(255, 255, 255, 0.3);
+    color: #222;
+  }
+
+  .thumbnail-not-exists {
+    border-color: #555;
+    color: #666;
+    background-color: #222;
+  }
+
+  .thumbnail-upload-button:hover {
+    background-color: #333;
+  }
+}

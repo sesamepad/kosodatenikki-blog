@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  gap: 2rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+main {
+  flex: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  .container {
+    background-color: #121212;
+    color: #eee;
+  }
+
+  main {
+    color: #eee;
+  }
+}

@@ -1,0 +1,136 @@
+.mobile-categories-section {
+  padding: 1rem;
+  background: #ffffff;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mobile-categories-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.mobile-categories-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.mobile-category-item {
+  position: relative;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.mobile-category-item:hover {
+  transform: translateY(-2px);
+}
+
+.mobile-category-item a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 6px; /* 丸みを追加 */
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* 左上の折り返し風 */
+.mobile-category-item a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top: 18px solid rgba(0, 0, 0, 0.05);
+  border-right: 18px solid transparent;
+  border-top-left-radius: 6px;
+}
+
+.mobile-category-name {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.mobile-category-count {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  min-width: 28px;
+  text-align: center;
+}
+
+/* --- nth-childで背景色変化（ライトモード） --- */
+.mobile-category-item:nth-child(6n + 1) a {
+  background-color: #fff7c2;
+}
+.mobile-category-item:nth-child(6n + 2) a {
+  background-color: #fde2e4;
+}
+.mobile-category-item:nth-child(6n + 3) a {
+  background-color: #e0f7fa;
+}
+.mobile-category-item:nth-child(6n + 4) a {
+  background-color: #e2f0cb;
+}
+.mobile-category-item:nth-child(6n + 5) a {
+  background-color: #f3e8ff;
+}
+.mobile-category-item:nth-child(6n) a {
+  background-color: #ffe5b4;
+}
+
+/* バッジの色は固定でもOK（ここでは青系） */
+.mobile-category-count {
+  background: linear-gradient(135deg, #4f8cff, #2a68e6);
+  box-shadow: 0 1px 3px rgba(79, 140, 255, 0.3);
+}
+
+/* --- ダークモード --- */
+@media (prefers-color-scheme: dark) {
+  .mobile-categories-section {
+    background: #1e1e1e;
+  }
+
+  .mobile-categories-title {
+    color: #f3f4f6;
+  }
+
+  /* 背景色を暗めに調整 */
+  .mobile-category-item:nth-child(6n + 1) a {
+    background-color: #7c6f3f;
+    color: #fff7c2;
+  }
+  .mobile-category-item:nth-child(6n + 2) a {
+    background-color: #733f45;
+    color: #fde2e4;
+  }
+  .mobile-category-item:nth-child(6n + 3) a {
+    background-color: #2b4f52;
+    color: #e0f7fa;
+  }
+  .mobile-category-item:nth-child(6n + 4) a {
+    background-color: #3f5430;
+    color: #e2f0cb;
+  }
+  .mobile-category-item:nth-child(6n + 5) a {
+    background-color: #4b3d64;
+    color: #f3e8ff;
+  }
+  .mobile-category-item:nth-child(6n) a {
+    background-color: #704c2a;
+    color: #ffe5b4;
+  }
+
+  /* バッジの色も暗背景用に調整 */
+  .mobile-category-count {
+    background: linear-gradient(135deg, #5a9bff, #3570d6);
+    box-shadow: 0 1px 3px rgba(90, 155, 255, 0.3);
+  }
+}

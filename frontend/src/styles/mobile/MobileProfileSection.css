@@ -1,0 +1,120 @@
+.mobile-profile-section {
+  margin: 2.5rem 1rem 1.5rem;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mobile-profile-section h3 {
+  text-align: left;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0.2rem 0.1rem 0.5rem;
+  padding-bottom: 0.2rem;
+  color: #333;
+  border-bottom: 2px solid #494949;
+}
+
+.mobile-profile-avatar {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 1rem 0 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-profile-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0.5rem 0 0.25rem;
+  color: #222;
+}
+
+.mobile-profile-role {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+.mobile-profile-bio {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+/* SNSリンク */
+.mobile-profile-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.mobile-profile-links a {
+  font-size: 1.25rem;
+  color: #e4405f;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.mobile-profile-links a:hover {
+  transform: scale(1.1);
+  color: #c13584;
+}
+
+/* 詳細プロフィールボタン */
+.mobile-profile-detail-link {
+  margin-top: 1rem;
+}
+
+.mobile-profile-detail-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #4f8cff, #2a68e6);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.mobile-profile-detail-button:hover {
+  background: linear-gradient(135deg, #3b79e3, #2159c7);
+}
+
+/* --- ダークモード --- */
+@media (prefers-color-scheme: dark) {
+  .mobile-profile-section {
+    background: #1e1e1e;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  .mobile-profile-section h3 {
+    color: #f3f4f6;
+  }
+
+  .mobile-profile-name {
+    color: #f3f4f6;
+  }
+
+  .mobile-profile-role {
+    color: #9ca3af;
+  }
+
+  .mobile-profile-bio {
+    color: #d1d5db;
+  }
+
+  .mobile-profile-detail-button {
+    background: linear-gradient(135deg, #5a9bff, #3570d6);
+  }
+
+  .mobile-profile-detail-button:hover {
+    background: linear-gradient(135deg, #4a8af0, #2c6fc0);
+  }
+}

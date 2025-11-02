@@ -1,0 +1,238 @@
+/* 投稿フッター全体: 記事との区切りを強調し、余白を調整 */
+.post-footer {
+  margin-top: 4rem;
+  border-top: 1px solid #e0e0e0;
+  padding: 1rem 1rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 投稿フッター内の左右レイアウト */
+.post-footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* メタ情報 */
+.post-meta {
+  font-size: 0.9rem;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-grow: 1;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #444;
+}
+
+.meta-item span.post-tag {
+  margin-right: 0.5rem;
+  color: #007acc;
+  font-size: 0.9rem;
+}
+
+.meta-item .meta-link {
+  /* カテゴリのリンク */
+  color: #007acc; /* 目立つリンク色 */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.meta-item .meta-link:hover {
+  color: #005f99; /* ホバーで少し濃く */
+  text-decoration: underline;
+}
+
+/* タグ表示 */
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.5rem;
+}
+
+.post-tag-link {
+  background-color: #e0f2fe;
+  color: #0284c7;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  border: 1px solid #b3e5fc;
+}
+
+.post-tag-link:hover {
+  background-color: #0284c7;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* シェアボタン群 */
+.share-buttons {
+  display: flex;
+  gap: 0.75rem;
+  align-items: end;
+  margin-top: 1rem;
+}
+
+.share-buttons span {
+  font-weight: 600;
+  color: #555;
+  margin-right: 0.5rem;
+}
+
+/* シェアリンク共通 */
+.share-buttons a {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  background-color: #eee;
+  border-radius: 50%;
+  padding: 0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* ホバー効果 */
+.share-buttons a:hover {
+  opacity: 0.85;
+  transform: scale(1.1);
+}
+
+/* 各SNSボタン色 */
+.share-buttons a.X {
+  background-color: #000000; /* Xの黒 */
+  color: white;
+}
+
+.share-buttons a.facebook {
+  background-color: #4267b2; /* Facebook青 */
+  color: white;
+}
+
+.share-buttons a.line {
+  background-color: #00c300; /* LINE緑 */
+  color: white;
+}
+
+/* シェアアイコン画像 */
+.share-button img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.2s;
+}
+
+/* ホバー時に少し拡大 */
+.share-button:hover img {
+  transform: scale(1.2);
+}
+
+/* サムネイル画像 */
+.desktop-post-content-thumbnail {
+  text-align: center;
+  margin: auto;
+  width: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  .post-footer {
+    background-color: #222;
+    border-color: #444;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+    color: #ccc;
+  }
+
+  .post-footer-inner {
+    gap: 1.5rem;
+  }
+
+  .post-meta {
+    color: #bbb;
+  }
+
+  .meta-item {
+    color: #aaa;
+  }
+
+  .meta-item span.post-tag {
+    color: #6cb2eb;
+  }
+
+  .meta-item .meta-link {
+    color: #6cb2eb;
+  }
+
+  .meta-item .meta-link:hover {
+    color: #3a8dd5;
+  }
+
+  .post-tags {
+    margin-top: 0.5rem;
+  }
+
+  .post-tag-link {
+    background-color: #1e40af;
+    color: #bfdbfe;
+    border-color: #3b82f6;
+  }
+
+  .post-tag-link:hover {
+    background-color: #3b82f6;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.7);
+  }
+
+  .share-buttons {
+    margin-top: 1rem;
+  }
+
+  .share-buttons span {
+    color: #bbb;
+  }
+
+  .share-buttons a {
+    background-color: #444;
+    color: #ddd;
+  }
+
+  .share-buttons a.X {
+    background-color: #222;
+    color: #eee;
+  }
+
+  .share-buttons a.facebook {
+    background-color: #2a458c;
+  }
+
+  .share-buttons a.line {
+    background-color: #017a00;
+  }
+
+  .share-button img {
+    filter: brightness(0) invert(1);
+  }
+}

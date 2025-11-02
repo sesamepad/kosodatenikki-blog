@@ -1,0 +1,73 @@
+.dashboard-container {
+  padding: 2rem;
+}
+
+.dashboard-container h1 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.dashboard-card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.dashboard-card:hover {
+  background: #f0f8ff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-card h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.dashboard-card p {
+  font-size: 1rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .dashboard-container {
+    background-color: #121212;
+    color: #eee;
+  }
+
+  .dashboard-card {
+    background: #1e1e1e;
+    border: 1px solid #444;
+    box-shadow: 0 2px 6px rgba(255, 255, 255, 0.05);
+  }
+
+  .dashboard-card:hover {
+    background: #2a3b5a;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+  }
+
+  .dashboard-card h2 {
+    color: #ddd;
+  }
+
+  .dashboard-card p {
+    color: #aaa;
+  }
+}

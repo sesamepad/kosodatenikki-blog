@@ -1,0 +1,199 @@
+/* ベース */
+.markdown-body {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  color: #2e2e2e;
+  line-height: 1.8;
+  font-size: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* 見出し */
+.markdown-body h1 {
+  font-size: 2.4rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.markdown-body h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #dcdcdc;
+  padding-bottom: 0.4rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.markdown-body h3 {
+  font-size: 1.6rem;
+  margin-top: 1.8rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* 段落 */
+.markdown-body p {
+  margin-bottom: 1.2rem;
+  color: #444;
+}
+
+/* リスト */
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.markdown-body li {
+  margin-bottom: 0.6rem;
+}
+
+/* 引用 */
+.markdown-body blockquote {
+  border-left: 4px solid #60a5fa;
+  background-color: #f0f9ff;
+  padding: 0.8rem 1.2rem;
+  margin: 1.5rem 0;
+  color: #374151;
+  font-style: italic;
+  border-radius: 6px;
+}
+
+/* コードブロック */
+.markdown-body pre {
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  overflow-x: auto;
+  background-color: rgb(40, 44, 52);
+  padding: 1rem;
+  max-width: 90%;
+}
+
+.code-block {
+  background-color: rgb(40, 44, 52);
+  color: #abb2bf;
+  padding: 1em;
+  margin: 1.5rem 0;
+  border-radius: 8px;
+  font-family: "Fira Code", "Courier New", monospace;
+  font-size: 0.95em;
+  overflow-x: auto;
+  line-height: 1.6;
+}
+
+/* インラインコード */
+.markdown-body code {
+  background-color: #f4f4f5;
+  border-radius: 4px;
+  font-family: "Fira Code", "Courier New", monospace;
+  font-size: 0.95em;
+}
+
+/* 画像 */
+.markdown-body img {
+  max-width: 70%;
+  border-radius: 8px;
+  display: block;
+  object-fit: contain;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 水平線 */
+.markdown-body hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 2rem 0;
+}
+
+/* テーブル */
+.markdown-body table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.markdown-body th,
+.markdown-body td {
+  border: 1px solid #ddd;
+  padding: 0.6rem;
+  text-align: left;
+}
+
+.markdown-body th {
+  background-color: #f3f4f6;
+  font-weight: bold;
+}
+
+@media (prefers-color-scheme: dark) {
+  .markdown-body {
+    color: #ddd;
+    background-color: #121212;
+  }
+
+  .markdown-body h1 {
+    border-bottom-color: #444;
+    color: #eee;
+  }
+
+  .markdown-body h2 {
+    border-bottom-color: #555;
+    color: #eee;
+  }
+
+  .markdown-body h3 {
+    color: #ddd;
+  }
+
+  .markdown-body p {
+    color: #ccc;
+  }
+
+  .markdown-body ul,
+  .markdown-body ol {
+    color: #ccc;
+  }
+
+  .markdown-body blockquote {
+    border-left-color: #3b82f6;
+    background-color: #1e293b;
+    color: #cbd5e1;
+  }
+
+  .markdown-body pre,
+  .code-block {
+    background-color: #1e1e2f;
+    color: #abb2bf;
+  }
+
+  .markdown-body code {
+    background-color: #2a2a2a;
+    color: #d1d5db;
+  }
+
+  .markdown-body img {
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+  }
+
+  .markdown-body hr {
+    border-top-color: #444;
+  }
+
+  .markdown-body table {
+    border-color: #444;
+  }
+
+  .markdown-body th,
+  .markdown-body td {
+    border-color: #555;
+  }
+
+  .markdown-body th {
+    background-color: #2a2a2a;
+  }
+}

@@ -1,0 +1,36 @@
+/* ベーススタイル */
+body {
+  font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic UI", "Segoe UI",
+    "Roboto", "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* 見出しの統一感（太字指定） */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 1.4;
+  margin: 0.5em 0;
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  .main-page {
+    background-color: #121212;
+    color: #f1f1f1;
+  }
+
+  a {
+    color: #80bfff;
+  }
+}

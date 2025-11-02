@@ -1,0 +1,202 @@
+/* モバイル用 Markdown 全体 */
+.mobile-markdown-body {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  color: #2e2e2e;
+  line-height: 1.6;
+  font-size: 0.9rem;
+  padding: 0.75rem;
+  box-sizing: border-box;
+}
+
+/* 見出し */
+.mobile-markdown-body h1 {
+  font-size: 1.8rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 0.4rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.mobile-markdown-body h2 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 1px solid #dcdcdc;
+  padding-bottom: 0.3rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.mobile-markdown-body h3 {
+  font-size: 1.2rem;
+  margin-top: 1.2rem;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* 段落 */
+.mobile-markdown-body p {
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+/* リスト */
+.mobile-markdown-body ul,
+.mobile-markdown-body ol {
+  padding-left: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.mobile-markdown-body li {
+  margin-bottom: 0.4rem;
+}
+
+/* 引用 */
+.mobile-markdown-body blockquote {
+  border-left: 3px solid #60a5fa;
+  background-color: #f0f9ff;
+  padding: 0.6rem 1rem;
+  margin: 1rem 0;
+  color: #374151;
+  font-style: italic;
+  border-radius: 4px;
+}
+
+/* コードブロック */
+.mobile-markdown-body pre {
+  margin: 1rem 0;
+  border-radius: 8px;
+  overflow-x: auto;
+  background-color: rgb(40, 44, 52);
+  padding: 0.8rem;
+  max-width: 100%;
+  font-size: 0.85rem;
+}
+
+.code-block {
+  background-color: rgb(40, 44, 52);
+  color: #abb2bf;
+  padding: 0.8em;
+  margin: 1rem 0;
+  border-radius: 8px;
+  font-family: "Fira Code", "Courier New", monospace;
+  font-size: 0.85em;
+  overflow-x: auto;
+  line-height: 1.6;
+}
+
+/* インラインコード */
+.mobile-markdown-body code {
+  background-color: #f4f4f5;
+  border-radius: 4px;
+  font-family: "Fira Code", "Courier New", monospace;
+  font-size: 0.85em;
+}
+
+/* 画像 */
+.mobile-markdown-body img {
+  max-width: 100%;
+  border-radius: 6px;
+  display: block;
+  object-fit: contain;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* 水平線 */
+.mobile-markdown-body hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 1.5rem 0;
+}
+
+/* テーブル */
+.mobile-markdown-body table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1rem 0;
+  font-size: 0.85rem;
+}
+
+.mobile-markdown-body th,
+.mobile-markdown-body td {
+  border: 1px solid #ddd;
+  padding: 0.4rem 0.5rem;
+  text-align: left;
+}
+
+.mobile-markdown-body th {
+  background-color: #f3f4f6;
+  font-weight: bold;
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  .mobile-markdown-body {
+    color: #ddd;
+    background-color: #121212;
+  }
+
+  .mobile-markdown-body h1 {
+    border-bottom-color: #444;
+    color: #eee;
+  }
+
+  .mobile-markdown-body h2 {
+    border-bottom-color: #555;
+    color: #eee;
+  }
+
+  .mobile-markdown-body h3 {
+    color: #ddd;
+  }
+
+  .mobile-markdown-body p {
+    color: #ccc;
+  }
+
+  .mobile-markdown-body ul,
+  .mobile-markdown-body ol {
+    color: #ccc;
+  }
+
+  .mobile-markdown-body blockquote {
+    border-left-color: #3b82f6;
+    background-color: #1e293b;
+    color: #cbd5e1;
+  }
+
+  .mobile-markdown-body pre,
+  .code-block {
+    background-color: #1e1e2f;
+    color: #abb2bf;
+  }
+
+  .mobile-markdown-body code {
+    background-color: #2a2a2a;
+    color: #d1d5db;
+  }
+
+  .mobile-markdown-body img {
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
+  }
+
+  .mobile-markdown-body hr {
+    border-top-color: #444;
+  }
+
+  .mobile-markdown-body table {
+    border-color: #444;
+  }
+
+  .mobile-markdown-body th,
+  .mobile-markdown-body td {
+    border-color: #555;
+  }
+
+  .mobile-markdown-body th {
+    background-color: #2a2a2a;
+  }
+}

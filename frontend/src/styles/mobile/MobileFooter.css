@@ -1,0 +1,44 @@
+.mobile-footer {
+  background-color: var(--footer-bg, #f8f8f8);
+  padding: 1rem 0.5rem;
+  text-align: center;
+  border-top: 1px solid var(--footer-border, #ddd);
+}
+
+.mobile-footer-logo h3 {
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem 0;
+}
+
+.mobile-footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.mobile-footer-nav a {
+  font-size: 0.85rem;
+  color: var(--footer-link, #333);
+  text-decoration: none;
+}
+
+.mobile-footer-nav a:hover {
+  text-decoration: underline;
+}
+
+.mobile-footer-copy {
+  font-size: 0.7rem;
+  color: var(--footer-text, #777);
+}
+
+/* ダークモード対応 */
+@media (prefers-color-scheme: dark) {
+  .mobile-footer {
+    --footer-bg: #1a1a1a;
+    --footer-border: #333;
+    --footer-link: #eee;
+    --footer-text: #aaa;
+  }
+}

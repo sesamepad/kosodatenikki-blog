@@ -1,0 +1,26 @@
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.about-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-container h2 {
+  font-size: 1.3rem;
+  margin-top: 2rem;
+}
+
+.about-container ul {
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.profile-img {
+  max-width: 50%;
+}

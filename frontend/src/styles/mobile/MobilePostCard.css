@@ -1,0 +1,126 @@
+.mobile-article-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease;
+}
+
+.mobile-article-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-article-card-link {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+.mobile-article-card-image-container {
+  height: 200px;
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+  justify-content: center;
+  display: flex;
+}
+
+.mobile-article-card-image {
+  width: auto;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+  margin: 0 auto;
+}
+
+.mobile-article-card:hover .mobile-article-card-image {
+  transform: scale(1.05);
+}
+
+.mobile-article-card-content {
+  padding: 16px;
+}
+
+.mobile-article-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.mobile-category-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  color: #007acc;
+}
+
+.mobile-post-date {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.mobile-meta-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+.mobile-post-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  line-height: 1.3;
+}
+
+.mobile-post-summary {
+  font-size: 0.8rem;
+  color: #444;
+  line-height: 1.4;
+  max-height: 3.6em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 12px;
+}
+
+.mobile-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.mobile-tag-badge {
+  background: #e6f0ff;
+  color: #007acc;
+  font-size: 0.7rem;
+  padding: 3px 7px;
+  border-radius: 12px;
+  user-select: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .mobile-article-card {
+    background: #1e1e1e;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+  }
+  .mobile-article-card-meta,
+  .mobile-post-summary {
+    color: #bbb;
+  }
+  .mobile-category-badge,
+  .mobile-tag-badge {
+    background: #003366;
+    color: #80b3ff;
+  }
+  .mobile-post-title {
+    color: #fff;
+  }
+  .mobile-article-card-image-container {
+    border-bottom: 1px solid #444;
+  }
+}

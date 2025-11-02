@@ -1,0 +1,32 @@
+.privacy-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.privacy-container h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.privacy-container h2 {
+  font-size: 1.2rem;
+  margin-top: 1.8rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  .privacy-container {
+    color: #ccc;
+    background-color: #121212;
+  }
+
+  .privacy-container h1 {
+    color: #eee;
+  }
+
+  .privacy-container h2 {
+    color: #bbb;
+  }
+}

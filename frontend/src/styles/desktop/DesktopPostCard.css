@@ -1,0 +1,185 @@
+/* ----- カード全体 ----- */
+.post-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  background-color: #fff;
+  margin-bottom: 0.8rem;
+}
+
+.post-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* ----- 内部レイアウト ----- */
+.post-card-wrapper {
+  display: flex;
+  gap: 1.2rem;
+  padding: 0.8rem 1rem;
+  align-items: center;
+}
+
+.post-card-image-container {
+  flex-shrink: 0;
+  width: 180px;
+  height: 120px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.post-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ----- コンテンツエリア ----- */
+.post-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  flex: 1;
+  position: relative;
+  padding: 0px 16px;
+}
+
+.post-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 1.4;
+  margin: 0.4rem 0;
+  color: #222;
+}
+
+.post-title a:hover {
+  text-decoration: underline;
+  color: #0056b3;
+}
+
+.post-main-text {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0.4rem 0 0.8rem;
+}
+
+/* ----- メタ情報（カテゴリ・タグ） ----- */
+.post-card-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.category-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0 8px 4px;
+  border-radius: 6px;
+  gap: 4px;
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.desktop-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag-badge {
+  background-color: #f0f0f0;
+  color: #777;
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 12px;
+}
+
+/* ----- フッター（タグ + 日付） ----- */
+.post-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 0.4rem;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.post-date-container {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: #888;
+}
+
+/* ----- アイコン ----- */
+.meta-icon,
+.calendar-icon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+@media (prefers-color-scheme: dark) {
+  .post-card {
+    background-color: #1e1e1e;
+    border-color: #333;
+    box-shadow: none;
+  }
+
+  .post-card:hover {
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .post-title {
+    color: #ddd;
+  }
+
+  .post-title a:hover {
+    color: #82aaff;
+  }
+
+  .post-main-text {
+    color: #aaa;
+  }
+
+  .post-card-meta {
+    gap: 8px;
+  }
+
+  .category-badge {
+    background-color: #26418f;
+    color: #bbdefb;
+  }
+
+  .tag-badge {
+    background-color: #333;
+    color: #bbb;
+  }
+
+  .post-card-footer {
+    color: #aaa;
+  }
+
+  .post-date-container {
+    color: #888;
+  }
+
+  .meta-icon,
+  .calendar-icon {
+    filter: brightness(0) invert(1);
+  }
+}

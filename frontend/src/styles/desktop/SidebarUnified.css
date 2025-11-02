@@ -1,0 +1,298 @@
+/* === Sidebar Wrapper === */
+.sidebar {
+  width: 300px;
+  padding: 0.7rem;
+  background-color: #f8f8f8;
+  border-left: 1px solid #ddd;
+}
+
+/* === セクション共通 === */
+.sidebar-section {
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.sidebar-section h3 {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+/* === 人気記事セクション === */
+.popular-posts {
+  padding: 0.5rem;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.popular-posts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.popular-posts-list li {
+  margin-bottom: 12px;
+}
+
+.popular-post-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.popular-post-link:hover {
+  background-color: #f0f0f0;
+}
+
+.popular-post-cover {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.popular-post-title {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #333;
+}
+
+.rank {
+  width: 1.5em;
+  font-weight: bold;
+  color: #555;
+  flex-shrink: 0;
+  text-align: right;
+  margin-right: 8px;
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  background-color: #f0f4f8;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 0.5rem 0;
+  background: transparent;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #666;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.tab-button:hover {
+  background-color: #dceeff;
+}
+
+.tab-button.active {
+  background-color: #a5d8ff;
+  color: #003366;
+  font-weight: 600;
+}
+
+/* === タグリストセクション === */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+.tag-list li {
+  margin: 0;
+  list-style: none;
+}
+
+.tag-link {
+  display: inline-block;
+  background-color: #e0e7ff;
+  color: #3730a3;
+  padding: 0.3rem 0.8rem;
+  border-radius: 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgb(99 102 241 / 0.2);
+  transition: all 0.3s ease;
+  user-select: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.tag-link:hover {
+  background-color: #3730a3;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgb(99 102 241 / 0.4);
+  transform: translateY(-2px);
+}
+
+/* === プロフィールセクション === */
+.profile-section {
+  padding: 0;
+}
+
+.profile-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 0.5rem;
+}
+
+.profile-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0.3rem 0;
+}
+
+.profile-role {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+.profile-bio {
+  font-size: 0.85rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.profile-links a {
+  margin: 0 0.3rem;
+  font-size: 1.25rem;
+  color: #555;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.profile-links a:hover {
+  color: #1e90ff;
+  transform: scale(1.2);
+}
+
+.profile-detail-link {
+  margin-top: 1rem;
+}
+
+.profile-detail-button {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #1e90ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.profile-detail-button:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* === ダークモード対応 === */
+@media (prefers-color-scheme: dark) {
+  .sidebar {
+    background-color: #1e1e1e;
+    border-left: 1px solid #333;
+    color: #ddd;
+  }
+
+  .sidebar-section,
+  .popular-posts {
+    background-color: #2a2a2a;
+    box-shadow: none;
+  }
+
+  .popular-post-link:hover {
+    background-color: #3a3a3a;
+  }
+
+  .popular-post-title {
+    color: #ddd;
+  }
+
+  .rank {
+    color: #aaa;
+  }
+
+  .tab-buttons {
+    background-color: #222;
+  }
+
+  .tab-button {
+    color: #bbb;
+  }
+
+  .tab-button:hover {
+    background-color: #333;
+  }
+
+  .tab-button.active {
+    background-color: #0055aa;
+    color: #eee;
+  }
+
+  .tag-link {
+    background-color: #444877;
+    color: #ccd9ff;
+    box-shadow: 0 2px 5px rgb(66 66 150 / 0.5);
+  }
+
+  .tag-link:hover {
+    background-color: #1c1c6d;
+    color: #fff;
+    box-shadow: 0 4px 10px rgb(66 66 150 / 0.8);
+  }
+
+  .profile-container {
+    background-color: #2b2b2b;
+    box-shadow: none;
+    color: #ddd;
+  }
+
+  .profile-name,
+  .profile-role,
+  .profile-bio {
+    color: #ddd;
+  }
+
+  .profile-links a {
+    color: #bbb;
+  }
+
+  .profile-links a:hover {
+    color: #66aaff;
+  }
+
+  .profile-detail-button {
+    color: #66aaff;
+  }
+
+  .profile-detail-button:hover {
+    color: #3399ff;
+  }
+}

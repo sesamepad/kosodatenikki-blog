@@ -1,0 +1,113 @@
+.mobile-tags-section {
+  padding: 1rem;
+  background: #ffffff;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.mobile-tags-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.mobile-tags-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap; /* 横並びで折り返し */
+  gap: 8px;
+}
+
+.mobile-tags-item {
+  margin: 0;
+}
+
+.mobile-tags-item a {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.mobile-tags-item a:hover {
+  transform: translateY(-1px);
+}
+
+.mobile-tags-name {
+  white-space: nowrap;
+}
+
+/* --- nth-childカラー（ライトモード） --- */
+.mobile-tags-item:nth-child(6n + 1) a {
+  background-color: #e0f2fe;
+  color: #0369a1;
+}
+.mobile-tags-item:nth-child(6n + 2) a {
+  background-color: #fce7f3;
+  color: #9d174d;
+}
+.mobile-tags-item:nth-child(6n + 3) a {
+  background-color: #ecfccb;
+  color: #365314;
+}
+.mobile-tags-item:nth-child(6n + 4) a {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+.mobile-tags-item:nth-child(6n + 5) a {
+  background-color: #ede9fe;
+  color: #5b21b6;
+}
+.mobile-tags-item:nth-child(6n) a {
+  background-color: #cffafe;
+  color: #155e75;
+}
+
+/* --- ダークモード用配色 --- */
+@media (prefers-color-scheme: dark) {
+  .mobile-tags-section {
+    background: #1e1e1e;
+    box-shadow: none;
+  }
+
+  .mobile-tags-title {
+    color: #f3f4f6;
+  }
+
+  .mobile-tags-item a {
+    color: #fff; /* 基本文字色 */
+  }
+
+  .mobile-tags-item:nth-child(6n + 1) a {
+    background-color: #0369a1;
+    color: #e0f2fe;
+  }
+  .mobile-tags-item:nth-child(6n + 2) a {
+    background-color: #9d174d;
+    color: #fce7f3;
+  }
+  .mobile-tags-item:nth-child(6n + 3) a {
+    background-color: #365314;
+    color: #ecfccb;
+  }
+  .mobile-tags-item:nth-child(6n + 4) a {
+    background-color: #92400e;
+    color: #fef3c7;
+  }
+  .mobile-tags-item:nth-child(6n + 5) a {
+    background-color: #5b21b6;
+    color: #ede9fe;
+  }
+  .mobile-tags-item:nth-child(6n) a {
+    background-color: #155e75;
+    color: #cffafe;
+  }
+}
