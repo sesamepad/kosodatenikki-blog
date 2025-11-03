@@ -1,5 +1,9 @@
 version: "3.8"
 
+networks:
+  blog-net:
+    driver: bridge
+
 services:
   frontend:
     image: sesame830/blog-frontend:latest
