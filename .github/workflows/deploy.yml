@@ -53,32 +53,3 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/blog-frontend:latest
           platforms: linux/amd64,linux/arm64
-
-  # 本番環境へpull
-  deploy:
-    name: Deploy to Production
-    runs-on: ubuntu-latest
-    needs: build-and-push
-
-    steps:
-      # 1. リポジトリチェックアウト（ログ用）
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      # 2. SSH 秘密鍵セット
-      - name: Setup SSH key
-        uses: webfactory/ssh-agent@v0.7.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_KEY }}
-
-      # 3. 本番サーバーで DockerHub ログイン
-      - name: Login to DockerHub on remote
-        run: |
-          ssh -p 2222 -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
-          "echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin"
-
-      # 4. 最新イメージを pull & コンテナ再起動
-      - name: Pull images and restart containers
-        run: |
-          ssh -p 2222 -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} \
-          "cd /var/www/blog-app && docker compose pull && docker compose up -d"

@@ -3,6 +3,7 @@ version: "3.8"
 services:
   frontend:
     image: sesame830/blog-frontend:latest
+    platform: linux/arm64
     ports:
       - "8080:80"
     restart: unless-stopped
@@ -11,6 +12,7 @@ services:
 
   backend:
     image: sesame830/blog-backend:latest
+    platform: linux/arm64
     ports:
       - "3001:3001"
     restart: unless-stopped
@@ -22,7 +24,8 @@ services:
       - ./backend/posts:/app/posts
 
   scheduler:
-    image: sesame830/blog-backend:latest
+    image: sesame830/blog-scheduler:latest
+    platform: linux/arm64
     restart: unless-stopped
     env_file:
       - ./backend/.env.production
@@ -33,6 +36,7 @@ services:
 
   cloudflared:
     image: cloudflare/cloudflared:latest
+    platform: linux/arm64
     command: tunnel --config /etc/cloudflared/config.yml run
     environment:
       - TUNNEL_ORIGIN_CERT=/etc/cloudflared/cert.pem
