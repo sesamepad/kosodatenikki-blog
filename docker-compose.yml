@@ -9,6 +9,8 @@ services:
     restart: unless-stopped
     env_file:
       - ./frontend/.env.production
+    networks:
+      - blog-net
 
   backend:
     image: sesame830/blog-backend:latest
@@ -22,6 +24,8 @@ services:
     volumes:
       - ./backend/data:/app/data
       - ./backend/posts:/app/posts
+    networks:
+      - blog-net
 
   scheduler:
     image: sesame830/blog-scheduler:latest
@@ -33,6 +37,8 @@ services:
     volumes:
       - ./backend/data:/app/data
       - ./backend/posts:/app/posts
+    networks:
+      - blog-net
 
   cloudflared:
     image: cloudflare/cloudflared:latest
@@ -45,3 +51,5 @@ services:
       - /home/sesame/.cloudflared/b1db366e-7734-4236-a67c-aa4a57e089d3.json:/etc/cloudflared/b1db366e-7734-4236-a67c-aa4a57e089d3.json:ro
       - /home/sesame/.cloudflared/config.yml:/etc/cloudflared/config.yml:ro
     restart: unless-stopped
+    networks:
+      - blog-net
