@@ -1,77 +1,39 @@
 # デプロイ手順
 
-## 1. WSL に入る（Windows の場合）
+## 1. 本番環境にログイン
 
 ```bash
-wsl
+ssh -p <SSHポート番号> <ユーザ名>@<ホスト名>
 ```
 
-## 2. Docker Hub にログイン
-
-```bash
-docker login
-```
-
-## 3. イメージをプル
-
-```bash
-sudo docker pull sesame830/blog-backend:latest
-```
-
-```bash
-sudo docker pull sesame830/blog-frontend:latest
-```
-
-```bash
-sudo docker pull sesame830/blog-scheduler:latest
-```
-
-## 4. イメージをホスト PC に保存
-
-```bash
-sudo docker save -o blog-backend.tar sesame830/blog-backend:latest
-```
-
-```bash
-sudo docker save -o blog-frontend.tar sesame830/blog-frontend:latest
-```
-
-```bash
-sudo docker save -o blog-scheduler.tar sesame830/blog-scheduler:latest
-```
-
-## 5. 本番環境にコピー保存（SCP）
-
-```bash
-scp -P <SSHポート番号> blog-backend.tar blog-frontend.tar blog-scheduler.tar <ユーザ名>@<ホスト名>:/home/sesame/
-```
-
-## 6. 本番環境にログイン
-
-```bash
-ssh -P <SSHポート番号> <ユーザ名>@<ホスト名>
-```
-
-## 7. イメージをロード
-
-```bash
-sudo docker load -i blog-backend.tar
-```
-
-```bash
-sudo docker load -i blog-frontend.tar
-```
-
-```bash
-sudo docker load -i blog-scheduler.tar
-```
-
-## 8. ディレクトリ移動して、Docker Compose 起動
+## 2. ディレクトリ移動
 
 ```bash
 cd /var/www/<ディレクトリ名>
 ```
 
+## 3. 最新イメージを Docker Hub から取得
+
+```bash
+sudo docker compose pull
+```
+
+## 4. コンテナ起動・更新
+
 ```bash
 sudo docker compose up -d
+```
+
+## （必要であれば）起動確認
+
+動作確認
+
+```bash
+sudo docker ps
+```
+
+ログ確認
+
+```bash
+sudo docker compose logs -f
 ```

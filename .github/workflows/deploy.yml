@@ -35,6 +35,8 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/blog-backend:latest
           platforms: linux/amd64,linux/arm64
+          provenance: false
+          sbom: false
 
       # 5. scheduler イメージをビルド & push
       - name: Build and push scheduler
@@ -44,6 +46,8 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/blog-scheduler:latest
           platforms: linux/amd64,linux/arm64
+          provenance: false
+          sbom: false
 
       # 6. frontend イメージをビルド & push
       - name: Build and push frontend
@@ -53,3 +57,5 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/blog-frontend:latest
           platforms: linux/amd64,linux/arm64
+          provenance: false
+          sbom: false
