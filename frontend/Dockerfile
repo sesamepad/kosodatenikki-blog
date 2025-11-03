@@ -12,6 +12,7 @@ RUN npm ci
 
 # ソースコードをコピー
 COPY . .
+COPY .env.production .env.production
 
 # 本番ビルド
 RUN npm run build
