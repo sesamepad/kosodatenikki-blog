@@ -31,9 +31,8 @@ RUN npm ci --only=production
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/etc ./etc
 
-# 一旦要らないようなので、コメントアウトしておく。
-# # sqlite3 をインストール
-# RUN apt-get update && apt-get install -y sqlite3 && rm -rf /var/lib/apt/lists/*
+# sqlite3 をインストール
+RUN apt-get update && apt-get install -y sqlite3 && rm -rf /var/lib/apt/lists/*
 
 # SQLファイルもコピー（scheduler用）
 RUN mkdir -p ./dist/db
