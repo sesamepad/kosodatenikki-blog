@@ -37,7 +37,7 @@ services:
     restart: unless-stopped
     env_file:
       - ./backend/.env.production
-    command: ["node", "dist/scheduler.js"]
+    command: ["node", "dist/scheduler/scheduler.js"]
     volumes:
       - ./backend/data:/app/data
       - ./backend/posts:/app/posts
