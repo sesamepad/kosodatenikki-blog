@@ -3,6 +3,7 @@ import "@/styles/mobile/MobileHeader.css";
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { useSwipeable } from "react-swipeable";
 
 type Category = {
   id: number;
@@ -26,6 +27,20 @@ export default function MobileHeader() {
   const [showTags, setShowTags] = useState(true);
   const sidebarRef = useRef<HTMLDivElement>(null);
   const hamburgerRef = useRef<HTMLButtonElement>(null);
+
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => {
+      if (sidebarOpen) setSidebarOpen(false);
+    },
+    onSwipedRight: (eventData) => {
+      if (eventData.initial[0] < 40 && !sidebarOpen) {
+        setSidebarOpen(true);
+      }
+    },
+    preventScrollOnSwipe: true,
+    trackTouch: true,
+    trackMouse: false,
+  });
 
   useEffect(() => {
     const fetchCateTag = async () => {
@@ -62,7 +77,7 @@ export default function MobileHeader() {
   }, [sidebarOpen]);
 
   return (
-    <>
+    <div {...swipeHandlers} className="mobile-header-wrapper">
       {sidebarOpen && (
         <div
           className="mobile-sidebar-overlay"
@@ -195,6 +210,6 @@ export default function MobileHeader() {
           <span className="hamburger-line"></span>
         </button>
       </header>
-    </>
+    </div>
   );
 }
