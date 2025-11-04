@@ -24,7 +24,7 @@ sudo docker compose pull
 sudo docker compose up -d
 ```
 
-## （必要であれば）起動確認
+## （必要であれば）起動＆ログ確認
 
 動作確認
 
