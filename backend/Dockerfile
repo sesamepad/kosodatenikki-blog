@@ -41,5 +41,5 @@ COPY ./src/db/schema.sql ./dist/db/schema.sql
 # エントリポイント設定
 RUN chmod +x /app/etc/entrypoint.sh
 ENTRYPOINT ["/app/etc/entrypoint.sh"]
-CMD ["node", "dist/scheduler.js"]
+CMD ["node", "dist/scheduler/scheduler.js"]
 
