@@ -35,8 +35,7 @@ COPY --from=builder /app/etc ./etc
 RUN apt-get update && apt-get install -y sqlite3 && rm -rf /var/lib/apt/lists/*
 
 # SQLファイルもコピー（scheduler用）
-RUN mkdir -p ./dist/db
-COPY ./src/db/schema.sql ./dist/db/schema.sql
+COPY --from=builder /app/dist/db ./dist/db
 
 # エントリポイント設定
 RUN chmod +x /app/etc/entrypoint.sh
