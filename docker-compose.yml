@@ -32,7 +32,7 @@ services:
       - blog-net
 
   scheduler:
-    image: sesame830/blog-scheduler:latest
+    image: sesame830/blog-backend:latest
     platform: linux/arm64
     restart: unless-stopped
     env_file:

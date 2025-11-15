@@ -4,9 +4,8 @@ FROM node:22.5-bullseye AS builder
 # 作業ディレクトリ
 WORKDIR /app
 
-# package.json と package-lock.json をコピー
-COPY package*.json ./
-COPY tsconfig*.json ./
+# package と tsconfig をコピー
+COPY package*.json tsconfig*.json ./
 
 # 依存関係インストール
 RUN npm ci
@@ -41,5 +40,3 @@ COPY ./src/db/schema.sql ./dist/db/schema.sql
 # エントリポイント設定
 RUN chmod +x /app/etc/entrypoint.sh
 ENTRYPOINT ["/app/etc/entrypoint.sh"]
-CMD ["node", "dist/scheduler/scheduler.js"]
-
