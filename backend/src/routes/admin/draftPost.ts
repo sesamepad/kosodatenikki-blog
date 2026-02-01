@@ -11,21 +11,21 @@ const router = express.Router();
 
 function truncateStringToBytes(str: string, maxBytes: number): string {
   const encoder = new TextEncoder();
-  const bytes = encoder.encode(str);
 
-  if (bytes.length <= maxBytes) {
-    return str;
-  }
-  // 50バイト以内に収まるようにバイト配列を切り詰める
-  const truncatedBytes = bytes.slice(0, maxBytes);
+  // 文字単位で確認しながら切り詰める（絵文字対応）
+  let result = "";
+  let totalBytes = 0;
 
-  // バイト配列を文字列にデコードし直す
-  const decoder = new TextDecoder("utf-8", { fatal: false });
-  let result = decoder.decode(truncatedBytes);
+  for (const char of str) {
+    const charBytes = encoder.encode(char).length;
 
-  // もし末尾が文字の途中だった場合、（U+FFFD）になるため、それを削除する
-  if (result.endsWith("")) {
-    result = decoder.decode(truncatedBytes.slice(0, -1));
+    // この文字を追加するとバイト数を超える場合はここで終了
+    if (totalBytes + charBytes > maxBytes) {
+      break;
+    }
+
+    result += char;
+    totalBytes += charBytes;
   }
 
   return result;
@@ -43,7 +43,7 @@ router.get("/:id/edit", verifyToken, async (req, res) => {
         GROUP_CONCAT(b.TAG_ID, ',') AS TAG_IDS,
         STRFTIME('%Y/%m/%d', a.UPDATE_DATE) AS UPDATE_DATE
       FROM (
-        SELECT * FROM POSTS WHERE ID = ? 
+        SELECT * FROM POSTS WHERE ID = ?
       ) a
       LEFT JOIN POST_TAGS b
         ON a.ID = b.POST_ID
@@ -112,20 +112,20 @@ router.post("/", verifyToken, async (req, res) => {
     // SLUGを取得するためにカテゴリ名を取得する
     const category_name = await fetchOne(
       `SELECT NAME_EN FROM CATEGORIES WHERE ID = ?`,
-      [category]
+      [category],
     );
     const status = process_type === "publish" ? "released" : "draft";
     const abridgement_main = truncateStringToBytes(
       removeMarkdown(main_text),
-      50
+      300,
     );
     const sql = `
       INSERT INTO POSTS(
-        ID, CATEGORY_ID, TITLE, 
+        ID, CATEGORY_ID, TITLE,
         SLUG, MAIN_TEXT, STATUS,
         CREATE_DATE, UPDATE_DATE
       ) VALUES (
-        ?, ?, ?, 
+        ?, ?, ?,
         ?, ?, ?,
         CURRENT_TIMESTAMP, CURRENT_TIMESTAMP
       )
