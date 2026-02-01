@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS POSTS (
   CATEGORY_ID INTEGER NOT NULL,  -- カテゴリID
   TITLE TEXT NOT NULL, -- 記事のタイトル
   SLUG TEXT NOT NULL UNIQUE, -- URLに使用するslug(/category名/idとなるようにする※この値も使用してmarkdownも保存する)
-  MAIN_TEXT TEXT NOT NULL, -- 本文の一部（50byte制限※記事一覧の見出しの一部に使用）
+  MAIN_TEXT TEXT NOT NULL, -- 本文の一部（100文字制限※INSERT時にUTF-8対応で300バイトにカット、記事一覧の見出しの一部に使用）
   STATUS TEXT NOT NULL, -- 記事ステータス（draft:下書き, released:投稿済み, withdrawn: 取り下げ）
   CREATE_DATE DATETIME DEFAULT CURRENT_TIMESTAMP, -- レコード作成日
   UPDATE_DATE DATETIME DEFAULT CURRENT_TIMESTAMP, -- レコード更新日
